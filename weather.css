@@ -1,0 +1,350 @@
+/* 1. Basic settings for all elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. The whole page */
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, blue, gray);
+  color: #ffffff;
+}
+
+/* 3. Main weather card */
+.weather-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 28px 22px;
+  text-align: center;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+/* 4. Main heading */
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* 5. Small description under heading */
+.subtitle {
+  font-size: 15px;
+  margin-bottom: 24px;
+  color: #f5f5f5;
+}
+
+/* 6. Search area */
+.search-box {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+/* 7. City input */
+#city-input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+/* 8. Search button */
+#search-button {
+  padding: 13px 16px;
+  border: none;
+  margin-top:10px;
+  border-radius: 10px;
+  background: #263b80;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* 9. Button hover effect */
+#search-button:hover {
+  background: #172657;
+}
+
+/* 10. Message shown to the user */
+#message {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 12px 0;
+}
+
+/* 11. Weather result area */
+#weather-result {
+  margin-top: 20px;
+}
+
+
+/* 12. City name */
+#city-name {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+/* 13. Weather emoji */
+#weather-icon {
+  font-size: 55px;
+  margin: 10px 0;
+}
+
+/* 14. Temperature */
+#temperature {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* 15. Weather description */
+#description {
+  font-size: 17px;
+  text-transform: capitalize;
+  margin-bottom: 24px;
+}
+
+/* 16. Humidity and wind layout */
+.weather-details {
+  display: flex;
+  justify-content: space-around;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.weather-details div {
+  flex: 1;
+  padding: 10px 5px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.weather-details p:first-child {
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.weather-details p:last-child {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* 17. Make the app fit small screens */
+@media (max-width: 360px) {
+  .weather-container {
+    padding: 22px 14px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  #search-button {
+    padding: 12px 10px;
+  }
+
+  #temperature {
+    font-size: 42px;
+  }
+}
+
+/* Location search results */
+#location-select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  background: white;
+  color: #263b80;
+}
+
+#location-button {
+  padding: 12px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #263b80;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.forecast-section {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.forecast-section h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.forecast-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+.forecast-day {
+  padding: 12px 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.18);
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.forecast-day p {
+  margin: 7px 0;
+}
+
+.forecast-icon {
+  font-size: 25px;
+}
+
+.forecast-temperature {
+  font-weight: bold;
+}
+
+@media (max-width: 380px) {
+  .forecast-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.history-section {
+  margin-top: 25px;
+  text-align: center;
+}
+
+#recent-searches {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.history-item {
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+  cursor: pointer;
+}
+
+#clear-history {
+  margin-top: 8px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* PHASE 9: THEME VARIABLES */
+
+:root {
+  --page-bg: linear-gradient(135deg, #287b91, #5266a8);
+  --card-bg: rgba(20, 35, 65, 0.38);
+  --main-text: #ffffff;
+  --button-bg: #263b80;
+}
+
+body {
+ background: var(--page-bg);
+  color: var(--main-text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.weather-container {
+  background: var(--card-bg);
+  transition: background 0.3s ease;
+}
+
+#theme-toggle {
+  margin: 12px 0;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--button-bg);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* DARK THEME */
+
+body.dark-mode {
+  --page-bg: linear-gradient(135deg, #101827, #263449);
+  --card-bg: rgba(0, 0, 0, 0.35);
+  --main-text: #f5f5f5;
+  --button-bg: #405477;
+}
+
+body.dark-mode .weather-details div,
+body.dark-mode .forecast-day {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode #location-select {
+  background: #263449;
+  color: white;
+}
+
+/* PHASE 10: FINAL MOBILE POLISH */
+
+.weather-container {
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.search-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#city-input {
+  flex: 1 1 150px;
+  min-width: 0;
+}
+
+#search-button,
+#location-button {
+  margin-top: 0;
+}
+
+#weather-result {
+  overflow-wrap: anywhere;
+}
+
+.forecast-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 600px) {
+  .forecast-list {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+

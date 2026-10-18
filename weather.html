@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+     
+     
+     <main class="weather-container">
+          
+          <h1>Weather App 🌦️</h1>
+          <button id="theme-toggle" type="button">
+  🌙 Dark Mode
+</button>
+          <p class="subtitle">Check the weather in your city.</p>
+          
+          <div id="search-box">
+               
+               <input
+        type="text"
+        id="city-input"
+        placeholder="Enter city name..."
+      ><br><br>
+      
+      <button id="search-button">Search </button> 
+      <button id="location-button" type="button">
+  Use My Location
+</button>    
+          </div>
+          
+          <p id="message">Search for a city to see it weather</p>
+          <select id="location-select" hidden>
+  <option value="">Choose the correct location</option>
+</select>
+
+          <section id="weather-result" hidden>
+ <h2 id="city-name">City Name</h2>
+      <p id="weather-icon">🌤️</p>
+      <p id="temperature">--°C</p>
+      <p id="description">Weather condition</p>
+      
+      <div class="weather-details">
+        <div>
+          <p>Humidity</p>
+          <p id="humidity">--%</p>
+        </div>
+        
+        <div>
+          <p>Wind Speed</p>
+          <p id="wind-speed">-- km/h</p>
+        </div>
+      </div>
+      
+      <div class="forecast-section">
+  <h3>5-Day Forecast</h3>
+  <div id="forecast-list" class="forecast-list"></div>
+</div>
+         
+          </section>
+          
+          <section class="history-section">
+  <h3>Recent Searches 🕘</h3>
+  <div id="recent-searches"></div>
+  <button id="clear-history">Clear History</button>
+</section>
+     </main>
+     <script src="weather.js"></script>
+     </body>
+     </html>
